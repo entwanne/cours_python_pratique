@@ -26,18 +26,49 @@ On peut aussi accéder au chemin de l'exécutable Python (`executable`), ainsi q
 ```
 
 Le module met à disposition les fichiers `stdin`, `stdout` et `stderr` qui sont liés respectivement à l'entrée standard, la sortie standard et la sortie d'erreur.
+Ils s'utilisent donc comme n'importe quels fichiers avec des méthodes pour lire ou écrire du texte.
+
+Il s'agit des connecteurs par défaut pour interagir avec le terminal.
+Ainsi, `stdin` est l'entrée standard : elle permet de lire du texte entré par l'utilisateur mais ne permet pas d'écrire.
+
+La fonction `input` que nous connaissons est connectée à l'entrée standard.
+`input` correspond en fait à lire une ligne sur le fichier `sys.stdin`.
 
 ```pycon
 >>> sys.stdin.readline()
 hello
 'hello\n'
+```
+
+`stdout` est la sortie standard, c'est-à-dire là où s'affiche ce qui est écrit dans le programme.
+La fonction `print` est connectée par défaut à la sortie standard.
+
+```pycon
 >>> sys.stdout.write('coucou\n')
 coucou
 7
+```
+
+Enfin `stderr` est la sortie d'erreur, qui est généralement liée à la sortie standard (mais peut être séparée).
+C'est là que sont affichés les messages d'erreurs lorsque surviennent des exceptions.
+
+```pycon
 >>> sys.stderr.write('error\n')
 error
 6
 ```
+
+[[i | Redirection des entrées / sorties]]
+| Par défaut dans un terminal, les entrée et sorties standards sont liées à l'affichage du terminal.
+| Le shell permet cependant de  les rediriger depuis/vers des fichiers spécifiques.
+|
+| Ainsi, `python monprogramme.py > output` fera que tout ce qui est écrit sur la sortie standard au sein du programme sera enrégistré dans le fichier `output` plutôt qu'affiché sur le terminal.
+|
+| De même, `python monprogramme.py < input` permet de lire les entrées depuis le fichier `input` plutôt que depuis le terminal.
+|
+| Pour la sortie d'erreur, c'est l'opération `2>` qui est généralement utilisée afin de la rediriger vers un fichier.
+
+-----
 
 Le dictionnaire `modules` référence tous les modules importés au sein de l'interpréteur.
 C'est un mécanisme de cache au sein de Python pour éviter de charger plusieurs fois un même module.

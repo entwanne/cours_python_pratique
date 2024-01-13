@@ -1,4 +1,4 @@
-## Modules systèmes -- draft
+## Modules systèmes
 
 Nous allons voir ici comment manipuler le système de fichiers (autrement dit les fichiers et répertoires de votre ordinateur) avec Python, à l'aide des modules `pathlib` et `shutil`.
 
