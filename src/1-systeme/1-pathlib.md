@@ -1,6 +1,6 @@
 ### Chemins et fichiers
 
-Souviens-toi, j'ai déjà présenté brièvement la `pathlib` dans [le zeste de Python]() pour tester l'existence d'un fichier.
+Souviens-toi, j'ai déjà présenté brièvement la `pathlib` dans [le zeste de Python](https://zestedesavoir.com/tutoriels/2514/un-zeste-de-python/6-entrees-sorties/6-exceptions/#2-2-lbyl) pour tester l'existence d'un fichier.
 Mais ce module de la bibliothèque standard va bien au-delà et propose une ribambelle d'outils pour travailler avec les chemins et les fichiers.
 
 Le module `pathlib` définit principalement le type `Path` ainsi que d'autres types qui en dépendent suivant l'implémentation.
